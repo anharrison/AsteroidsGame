@@ -1,9 +1,7 @@
-//your variable declarations here
 Spaceship spaceship = new Spaceship();
 Star [] Starfield = new Star[200];
 ArrayList<Asteroid> asteroids = new ArrayList<Asteroid>();
 public void setup() {
-  //your code here
   size(400, 400);
   for (int i = 0; i < Starfield.length; i++) {
     Starfield[i] = new Star();
@@ -13,7 +11,6 @@ public void setup() {
   }
 }
 public void draw() {
-  //your code here
   background(0);
   for (int i = 0; i < Starfield.length; i++) {
     Starfield[i].show();
@@ -25,7 +22,6 @@ public void draw() {
     (asteroids.get(i)).show();
     if (dist((float)spaceship.getX(), (float)spaceship.getY(), (float)(asteroids.get(i)).myCenterX, (float)(asteroids.get(i)).myCenterY) <= 20) {
       asteroids.remove(i);
-      //asteroids.add(new Asteroid());
     }
   }
 }
@@ -43,7 +39,6 @@ public void keyPressed() {
     spaceship.accelerate(-1);
   }
   if (key == 'h') {
-    //hyperspace
     spaceship.hyperspace();
   }
 }
