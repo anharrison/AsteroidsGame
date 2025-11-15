@@ -2,10 +2,10 @@ class Spaceship extends Floater
 {   
     //your code here
     public Spaceship(){
-      corners = 4;
-      xCorners = new int[]{-8, 16, -8, -2};
-      yCorners = new int[]{-8, 0, 8, 0};
-      myColor = color(255,255,255);
+      corners = 9;
+      xCorners = new int[] {11, 4, -2, -7, -10, -10, -7, -2, 4};
+      yCorners = new int[] {0, -2, -6, -6, -10, 10, 6, 6, 2};
+      myColor = color(255,10,50);
       myCenterX = 200;
       myCenterY = 200;
       //myXspeed = Math.random()*2;
