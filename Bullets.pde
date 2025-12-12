@@ -42,14 +42,14 @@ class Bullet extends Floater
     }
     
 
-  public Bullet(Spaceship ricardoSuong)
+  public Bullet(Spaceship bob)
   {
-    myCenterX = ricardoSuong.getX();
-    myCenterY = ricardoSuong.getY();
-    myPointDirection = ricardoSuong.getPointDirection();
+    myCenterX = bob.getX();
+    myCenterY = bob.getY();
+    myPointDirection = bob.getPointDirection();
     double dRadians = myPointDirection*(Math.PI/180);
-    myDirectionX = 5 * Math.cos(dRadians) + ricardoSuong.getDirectionX();
-    myDirectionY = 5 * Math.sin(dRadians) + ricardoSuong.getDirectionY();
+    myDirectionX = 5 * Math.cos(dRadians) + bob.getDirectionX();
+    myDirectionY = 5 * Math.sin(dRadians) + bob.getDirectionY();
 
   }
   public void show()
