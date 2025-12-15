@@ -1,65 +1,30 @@
-class Bullet extends Floater
-{
-    public void setCenterX(int x)
-    {
-        myCenterX = x;
-    }
-    public int getX()
-    {
-      return (int)myCenterX;
-    }
-    public void setCenterY(int y)
-    {
-        myCenterY = y;
-    }
-    public int getY()
-    {
-      return (int)myCenterY;
-    }
-    public void setPointDirection(double a)
-    {
-        myPointDirection = a;
-    }
-    public double getPointDirection()
-    {
-      return myPointDirection;
-    }
-    public void setDirectionX(int b)
-    {
-        myDirectionX = b;
-    }
-    public double getDirectionX()
-    {
-      return myDirectionX;
-    }
-    public void setDirectionY(int c)
-    {
-        myDirectionY = c;
-    }
-    public double getDirectionY()
-    {
-      return myDirectionY;
-    }
-    
-
-  public Bullet(Spaceship bob)
-  {
-    myCenterX = bob.getX();
-    myCenterY = bob.getY();
-    myPointDirection = bob.getPointDirection();
-    double dRadians = myPointDirection*(Math.PI/180);
-    myDirectionX = 5 * Math.cos(dRadians) + bob.getDirectionX();
-    myDirectionY = 5 * Math.sin(dRadians) + bob.getDirectionY();
-
-  }
-  public void show()
-  {
-    fill(0, 255, 10);
-    ellipse((float)myCenterX, (float)myCenterY, 8, 8);
-  }
-  public void move()
-  {
-    myCenterX += myDirectionX;    
-    myCenterY += myDirectionY;
+class Bullet extends Floater {    
+  public Bullet(Spaceship theShip) { 
+    corners = 3; 
+    xCorners = new int[3];   
+    yCorners = new int[3];   
+    xCorners[0] = 12;
+    yCorners[0] = -4;
+    xCorners[1] = 16;
+    yCorners[1] = 0;
+    xCorners[2] = 12;
+    yCorners[2] = 4;    
+    myColor = color(255);     
+    myCenterX = theShip.getX();
+    myCenterY = theShip.getY(); 
+    myPointDirection = theShip.getPointDirection();     
+    myXspeed = theShip.getXspeed();
+    myYspeed = theShip.getYspeed();  
+    accelerate(6); 
+  }  
+  public void move() { 
+    myCenterX += myXspeed;    
+    myCenterY += myYspeed;   
+  } 
+  public double getX() {
+    return myCenterX;
+  } 
+  public double getY() {
+    return myCenterY;
   }
 }
